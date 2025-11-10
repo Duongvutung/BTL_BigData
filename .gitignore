@@ -1,0 +1,16 @@
+# Bỏ qua thư mục môi trường ảo
+venv/
+
+# Bỏ qua cache của Python
+__pycache__/
+*.pyc
+
+# Bỏ qua các file notebook checkpoint
+.ipynb_checkpoints/
+
+# Bỏ qua dữ liệu thô
+*.csv
+*.xlsx
+
+# Bỏ qua file cấu hình VSCode
+.vscode/

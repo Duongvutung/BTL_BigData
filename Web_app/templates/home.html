@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Home</h1>
+    <p>Phân tích & phân cụm khách hàng theo hành vi mua sắm online</p>
+
+    <h2>Dữ liệu mẫu</h2>
+    {{ rows|safe }}
+
+    <a href="/eda">Xem EDA</a>
+    <br>
+    <a href="/clustering">Xem phân cụm K-means</a>
+{% endblock %}

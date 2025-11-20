@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>K-means Clustering</h1>
+    <p>Kết quả phân cụm khách hàng.</p>
+
+    <img src="{{ url_for('static', filename='images/cluster_plot.png') }}" width="500" alt="Cluster Plot">
+
+    <br>
+    <a href="/">Home</a>
+{% endblock %}

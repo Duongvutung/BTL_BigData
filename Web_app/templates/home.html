@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Home</h1>
-    <p>Phân tích & phân cụm khách hàng theo hành vi mua sắm online</p>
+<h1>Trang chủ</h1>
+<p>Phân tích và phân cụm khách hàng theo hành vi mua sắm online</p>
 
-    <h2>Dữ liệu mẫu</h2>
-    {{ rows|safe }}
+<h2>Dữ liệu mẫu</h2>
+{{ default_table|safe }}
 
-    <a href="/eda">Xem EDA</a>
-    <br>
-    <a href="/clustering">Xem phân cụm K-means</a>
+{% if upload_table %}
+<h2>Dữ liệu upload</h2>
+{{ upload_table|safe }}
+{% endif %}
+
+<a href="/eda" class="btn btn-primary mt-3">EDA</a>
+<a href="/clustering" class="btn btn-success mt-3">Phân cụm K-means</a>
 {% endblock %}

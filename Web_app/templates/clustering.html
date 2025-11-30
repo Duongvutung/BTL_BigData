@@ -1,11 +1,31 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>K-means Clustering</h1>
-    <p>Kết quả phân cụm khách hàng.</p>
+<h1>K-means Clustering</h1>
 
-    <img src="{{ url_for('static', filename='images/cluster_plot.png') }}" width="500" alt="Cluster Plot">
+<h2>Dữ liệu mặc định</h2>
+<img src="{{ url_for('static', filename='images/cluster_plot.png') }}" class="img-fluid" width="500" alt="Cluster Plot">
 
-    <br>
-    <a href="/">Home</a>
+<form method="post" class="mb-3">
+    <label for="k_clusters">Nhập số cluster K (Default data):</label>
+    <input type="number" name="k_clusters" id="k_clusters" value="{{ K }}" min="1" required>
+    <button type="submit" class="btn btn-primary mt-2">Cập nhật K</button>
+</form>
+
+{% if uploaded %}
+<h2>Dữ liệu upload</h2>
+<img src="{{ url_for('static', filename='images/upload_cluster_plot.png') }}" class="img-fluid" width="500" alt="Upload Cluster Plot">
+
+<form method="post" class="mb-3">
+    <label for="k_upload">Nhập số cluster K (Upload data):</label>
+    <input type="number" name="k_upload" id="k_upload" value="{{ K_upload }}" min="1" required>
+    <button type="submit" class="btn btn-primary mt-2">Cập nhật K</button>
+</form>
+{% endif %}
+
+<div class="mt-4">
+    <a href="/cluster_table" class="btn btn-info">Bảng phân cụm</a>
+    <a href="/upload" class="btn btn-warning">Upload CSV mới</a>
+    <a href="/" class="btn btn-secondary">Trang chủ</a>
+</div>
 {% endblock %}

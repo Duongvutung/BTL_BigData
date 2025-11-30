@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>EDA</title>
-</head>
-<body>
-    <h1>Exploratory Data Analysis</h1>
-    <p>Trang này sẽ hiển thị biểu đồ phân tích dữ liệu.</p>
+{% extends "layout.html" %}
 
-    <img src="/static/images/price_distribution.png" width="500">
-    <img src="/static/images/category_count.png" width="500">
+{% block content %}
+<h1>Exploratory Data Analysis (EDA)</h1>
 
-    <br><a href="/">Home</a>
-</body>
-</html>
+<h2>Dữ liệu mặc định</h2>
+<img src="{{ url_for('static', filename='images/price_distribution.png') }}" class="img-fluid" alt="Price Distribution">
+<img src="{{ url_for('static', filename='images/category_count.png') }}" class="img-fluid" alt="Category Count">
+
+{% if uploaded %}
+<h2>Dữ liệu upload</h2>
+<img src="{{ url_for('static', filename='images/upload_price_distribution.png') }}" class="img-fluid" alt="Upload Price Distribution">
+{% endif %}
+
+<a href="/" class="btn btn-secondary mt-3">Trang chủ</a>
+{% endblock %}
